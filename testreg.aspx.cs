@@ -4,22 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Configuration;
 
-public partial class De1reg : System.Web.UI.Page
+public partial class testreg : System.Web.UI.Page
 {
     SqlConnection cn;
     protected void Page_Load(object sender, EventArgs e)
     {
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
+       
     }
-
-    protected void btnSubmit_Click(object sender, EventArgs e)
+    protected void btnRegister_Click(object sender, EventArgs e)
     {
         try
         {
+            // Get connection string from Web.config
+
+
+            //using (SqlConnection con = new SqlConnection(con)) 
+            //{
             string Email = txtEmail.Text.Trim();
             string FullName = txtFullName.Text.Trim();
             string Password = txtPassword.Text.Trim();
@@ -56,18 +61,7 @@ public partial class De1reg : System.Web.UI.Page
         txtEmail.Text = "";
         txtFullName.Text = "";
         txtPassword.Text = "";
-        //txtDOB.Text = "";
         txtMobile.Text = "";
         ddlUserType.SelectedValue = "";
-        //ddlCountry.SelectedValue = "";
-        //ddlState.SelectedValue = "";
-        //ddlCity.SelectedValue = "";
-        //ddlPincode.SelectedValue = "";
-
-    }
-
-    protected void ddlUserType_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
     }
 }
