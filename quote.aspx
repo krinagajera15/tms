@@ -22,6 +22,7 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                      <img class="mb-5" src="img/tr1.jpg" style="object-fit: cover; margin-left:-80px; height:250px" alt="">
                     <!--<h6 class="text-secondary text-uppercase mb-3">Get A Quote</h6>
                     <h1 class="mb-5">Request A Free Qoute!</h1>
                     <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>

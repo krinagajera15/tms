@@ -48,7 +48,7 @@
 
             <div class="mb-3">
                 <label>User Type</label>
-                <asp:DropDownList ID="ddlUserType" runat="server" CssClass="form-select" OnSelectedIndexChanged="ddlUserType_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlUserType" runat="server" CssClass="form-select" >
                     <asp:ListItem Text="Select User Type" Value="" />
                     <asp:ListItem Text="Admin" Value="Admin" />
                     <asp:ListItem Text="User" Value="User" />
