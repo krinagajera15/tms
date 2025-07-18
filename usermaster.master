@@ -77,10 +77,10 @@
         </div>
     </nav>
     <!-- Navbar End -->
-        </asp:ContentPlaceHolder>
+        /asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
            
-        </asp:ContentPlaceHolder>
+        </as<p:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
         </asp:ContentPlaceHolder>
