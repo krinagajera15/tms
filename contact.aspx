@@ -31,35 +31,30 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <!--<input type="text" class="form-control" id="name" placeholder="Your Name">-->
-                                        <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Your Name" ></asp:TextBox>
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                         <!--<input type="email" class="form-control" id="email" placeholder="Your Email">-->
-                                         <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Your Email" TextMode="Email"></asp:TextBox>
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                         <!--<input type="text" class="form-control" id="subject" placeholder="Subject">-->
-                                         <asp:TextBox ID="TextBox3" runat="server" class="form-control" placeholder="Subject" ></asp:TextBox>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                         <!--<textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>-->
-                                             <asp:TextBox ID="TextBox4" runat="server"  class="form-control" placeholder="Leave a message here" style="height: 100px" TextMode="MultiLine"></asp:TextBox>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <!--<button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>-->
-                                    <asp:Button ID="Button1" runat="server" Text="Send Message" class="btn btn-primary w-100 py-3" />
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -79,5 +74,4 @@
     <!-- Contact End -->
 
 </asp:Content>
-
 

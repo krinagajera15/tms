@@ -71,16 +71,16 @@
                     </div>
                 </div>
                 <a href="contact.aspx" class="nav-item nav-link">Contact</a>
-                 <a href="service.aspx" class="nav-item nav-link">Log Out</a>
+                 <a href="logout.aspx" class="nav-item nav-link">Log Out</a>
             </div>
              
         </div>
     </nav>
     <!-- Navbar End -->
-        /asp:ContentPlaceHolder>
+        </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
            
-        </as<p:ContentPlaceHolder>
+        </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
         </asp:ContentPlaceHolder>
