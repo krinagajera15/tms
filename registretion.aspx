@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="testreg.aspx.cs" Inherits="testreg" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="registretion.aspx.cs" Inherits="testreg" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,7 @@
 <body>
    <form id="form1" runat="server">
         <div class="form-container">
-            <h3 class="text-center">User Registration</h3>
+            <h1 class="text-center">User Registration</h1>
 
             <div class="mb-3">
                 <label>Email</label>
