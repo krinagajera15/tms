@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <a href="contact.aspx" class="nav-item nav-link">Contact</a>
-                 <a href="service.aspx" class="nav-item nav-link">Log Out</a>
+                 <a href="logout.aspx" class="nav-item nav-link">Log Out</a>
             </div>
              
         </div>
