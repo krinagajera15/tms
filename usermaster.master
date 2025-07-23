@@ -36,6 +36,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <!-- Top Menu or Header -->
+        <div style="text-align:right; padding:10px;">
+         <asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>
+                         ||
+         <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+                         ||
+        <asp:PlaceHolder ID="phGuestLinks" runat="server">
+            <a href="signin.aspx">Login</a> || <a href="register.aspx">Register</a>
+        </asp:PlaceHolder>
+        </div>
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
              <!-- Spinner Start -->
@@ -71,10 +81,10 @@
                     </div>
                 </div>
                 <a href="contact.aspx" class="nav-item nav-link">Contact</a>
-                 <a href="logout.aspx" class="nav-item nav-link">Log Out</a>
+                 
             </div>
              
-        </div>
+        </div>        
     </nav>
     <!-- Navbar End -->
         </asp:ContentPlaceHolder>
