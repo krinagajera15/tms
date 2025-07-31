@@ -11,44 +11,34 @@ public partial class usermaster : System.Web.UI.MasterPage
     {
         //if (!IsPostBack)
         //{
-        //    if (Session["UserEmail"] != null)
-        //    {
-        //        // Login thay gayu che
-        //        phUserLinks.Visible = true;
-        //        phGuestLinks.Visible = false;
-        //        lblUserName.Text = Session["UserEmail"].ToString(); // athva Session["UserName"]
-        //    }
-        //    else
-        //    {
-        //        // Login nathi thayu
-        //        phUserLinks.Visible = false;
-        //        phGuestLinks.Visible = true;
-
-        //    }
-        //    lblUserName.Text = Session["UserEmail"].ToString();
-        //}
-        if (!IsPostBack)
-        {
-            // OPTIONAL: Show welcome message if user is logged in
-            if (Session["UserEmail"] != null)
+            if (Session["FullName"] != null)
             {
-                lblWelcome.Text = "Welcome, " + Session["UserEmail"].ToString();
+                lblWelcome.Text = "Welcome, " + Session["FullName"].ToString();
+                lnkLogout.Visible = true;
+                lnkLogin.Visible = false;
+                LinkButton1.Visible = true;
+
+
             }
+            else
+            {
+                lblWelcome.Text = "";
+                lnkLogout.Visible = false;
+                lnkLogin.Visible = true;
+            LinkButton1.Visible = false;
         }
-    }
-        
-
-    protected void btnLogout_Click(object sender, EventArgs e)
-    {
-        //Session.Clear();             // sessions ખાલી કરો
-        //Session.Abandon();           // completely remove session
-        //Response.Redirect("signin.aspx");  // back to login page
+        //}
     }
 
-    protected void lnkLogout_Click(object sender, EventArgs e)
+    protected void lnkLogout_Click1(object sender, EventArgs e)
     {
         Session.Clear();
         Session.Abandon();
-        Response.Redirect("signin.aspx");
+        Response.Redirect("index.aspx");
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+
     }
 }

@@ -5,12 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data;
 using System.Configuration;
 
-public partial class truckreq : System.Web.UI.Page
+public partial class quote : System.Web.UI.Page
 {
     SqlConnection cn;
-
     protected void Page_Load(object sender, EventArgs e)
     {
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
@@ -20,7 +20,7 @@ public partial class truckreq : System.Web.UI.Page
     {
         try
         {
-            
+
             string USER_NAME = txtid.Text.Trim();
             string FROM_CITY_NAME = txtfcity.Text.Trim();
             string TO_CITY_NAME = txtcity.Text.Trim();
@@ -28,14 +28,14 @@ public partial class truckreq : System.Web.UI.Page
             string TR_ENDDATE = DateTime.Now.AddDays(7).ToString("yyyy-MM-dd HH:mm:ss");
             string NO_OF_TRUCK = Textbox1.Text.Trim();
             string REMARKS = Textbox2.Text.Trim();
-            
+
 
 
             string query = "INSERT INTO TR_REQUEST (USER_NAME, FROM_CITY_NAME, TO_CITY_NAME, TR_STARTDATE, TR_ENDDATE, NO_OF_TRUCK, REMARKS) VALUES('" + USER_NAME + "','" + FROM_CITY_NAME + "','" + TO_CITY_NAME + "','" + TR_STARTDATE + "','" + TR_ENDDATE + "','" + NO_OF_TRUCK + "','" + REMARKS + "')";
 
             SqlCommand cmd = new SqlCommand(query, cn);
             cn.Open();
-            int i = cmd.ExecuteNonQuery();  
+            int i = cmd.ExecuteNonQuery();
             cn.Close();
 
             if (i > 0)
@@ -54,7 +54,6 @@ public partial class truckreq : System.Web.UI.Page
         }
     }
 
-   
     private void ClearFields()
     {
         txtid.Text = "";

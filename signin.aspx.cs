@@ -20,27 +20,45 @@ public partial class login : System.Web.UI.Page
     {
         string email = txtEmail.Text.Trim();
         string password = txtPassword.Text.Trim();
-
         
-        string query = "SELECT COUNT(*) FROM REGISTRETION WHERE Email = '" + email + "' AND Password = '" + password + "'";
+
+
+        string query = "SELECT Email,FullName,UserType FROM REGISTRETION WHERE Email = '" + email + "' AND Password = '" + password + "'";
 
         SqlCommand cmd = new SqlCommand(query, cn);
 
         try
         {
             cn.Open();
-            int count = (int)cmd.ExecuteScalar();
-            cn.Close();
+            SqlDataReader dr = cmd.ExecuteReader();
 
-            if (count == 1)
+            if (dr.Read())
             {
+                string UserType = dr["UserType"].ToString();
+
+                Session["FullName"] = dr["FullName"].ToString();
                 Session["UserEmail"] = email;
-                Response.Redirect("index.aspx");
+                Session["UserType"] = UserType;
+
+                if (UserType == "Admin")
+                {
+                    Response.Redirect("admin/adminindex.aspx");
+                }
+                //else if (UserType == "Client")
+                //{
+                //    Response.Redirect("UserDashboard.aspx");
+                //}
+                else if (UserType == "User") 
+                {
+                    Response.Redirect("index.aspx");
+                }
             }
             else
             {
                 Response.Write("<script>alert('Invalid Email or Password!');</script>");
             }
+            cn.Close();
+
         }
         catch (Exception ex)
         {

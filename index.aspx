@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/usermaster.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/usermaster.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -309,7 +309,7 @@
     Pricing End -->
 
 
-    <!-- Quote Start -->
+   <%-- <!-- Quote Start -->
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
@@ -359,10 +359,10 @@
             </div>
         </div>
     </div>
-    <!-- Quote End -->
+    <!-- Quote End -->--%>
 
 
-    <!-- Team Start -->
+  <%--  <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -441,7 +441,7 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Team End -->--%>
 
 
     <!-- Testimonial Start -->
