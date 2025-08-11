@@ -1,0 +1,118 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/usermaster.master" AutoEventWireup="true" CodeFile="truckrequest.aspx.cs" Inherits="quote" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" Runat="Server">
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Truck Request</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="index.aspx">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Truck Request</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Quote Start -->
+    <div class="container mt-5">
+            <div class="card shadow">
+                <%--<div class="card-header bg-primary text-white">--%>
+                    <h1><center>Genarate Truck Request</center></h1>
+                <%--</div>--%>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label>User Name</label>
+                        <asp:TextBox ID="txtid" runat="server" CssClass="form-control"  required="true" />
+                    </div>
+                    <div class="mb-3">
+                        <label>From city</label>
+                        <asp:TextBox ID="txtfcity" runat="server" CssClass="form-control" required="true"/>
+                    </div>
+                    <div class="mb-3">
+                        <label>To city</label>
+                        <asp:TextBox ID="txtcity" runat="server" CssClass="form-control" required="true"/>
+                    </div>
+                    <div class="mb-3">
+                        <label>Starting Date</label>
+                        <asp:TextBox ID="txtsdate" runat="server" TextMode="Date" CssClass="form-control" required="true"/>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label>Ending Date</label>
+                        <asp:TextBox ID="txtedate" runat="server" TextMode="Date" CssClass="form-control" required="true" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Number Of Trucks</label>
+                        <asp:TextBox ID="Textbox1" runat="server" CssClass="form-control" required="true"/>
+                    </div>
+                    <div class="mb-3">
+                        <label>Remarks</label>
+                        <asp:TextBox ID="Textbox2" runat="server" CssClass="form-control" required="true"/>
+                    </div>
+                    <center><asp:Button ID="Button1" runat="server" Text="Submit" Height="50px" Width="200px" BorderStyle="None" Font-Bold="true" ForeColor="White" BackColor="Red" OnClick="Button1_Click" /></center><br />
+                    <asp:Label ID="lblMessage" runat="server" CssClass="text-success mt-3 d-block"></asp:Label>
+                </div>
+            </div>
+        </div>
+    <%--<div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="text-secondary text-uppercase mb-3">Get A Quote</h6>
+                    <!--<h1 class="mb-5">Request A Free Qoute!</h1>
+                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                    <div class="d-flex align-items-center">
+                        <i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
+                        <div class="ps-4">
+                            <h6>Call for any query!</h6>
+                            <h3 class="text-primary m-0">+012 345 6789</h3>
+                        </div>
+                    </div>
+                </div>!-->
+                <div class="col-lg-7">
+                    <div class="bg-light text-center p-5 wow fadeIn" data-wow-delay="0.5s">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                   <!-- <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px; width: 744px">!-->
+              <asp:TextBox ID="TextBox1" runat="server" class="form-control border-0" placeholder="Your Name" style="height: 55px; width: 74px"></asp:TextBox>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                  <!--  <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px; width: 744px">!-->
+                  <asp:TextBox ID="TextBox2" runat="server" class="form-control border-0" placeholder="Your Email" style="height: 55px; width: 74px"></asp:TextBox>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <!--<input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px; width: 744px">!-->
+                      <asp:TextBox ID="TextBox3" runat="server" class="form-control border-0" placeholder="Your Mobile" style="height: 55px; width: 74px"></asp:TextBox>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                  <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Select A Freight</option>
+                                        <option value="1">Freight 1</option>
+                                        <option value="2">Freight 2</option>
+                                        <option value="3">Freight 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <!--<button class="btn btn-primary w-100 py-3" type="submit">Submit</button>!-->
+                              <asp:Button ID="Button1" runat="server" Text="submit" class="btn btn-primary w-100 py-3" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <!-- Quote End -->
+</asp:Content>
+
+
