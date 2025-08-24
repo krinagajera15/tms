@@ -22,7 +22,7 @@
     <div class="container mt-5">
             <div class="card shadow">
                 <%--<div class="card-header bg-primary text-white">--%>
-                    <h1><center>Genarate Truck Request</center></h1>
+                    <h1><center>Generate Truck Request</center></h1>
                 <%--</div>--%>
                 <div class="card-body">
                     <div class="mb-3">

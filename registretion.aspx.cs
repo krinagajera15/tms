@@ -20,6 +20,7 @@ public partial class testreg : System.Web.UI.Page
     {
         try
         {
+
             // Get connection string from Web.config
 
 

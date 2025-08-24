@@ -51,8 +51,8 @@
                     </div>
                     <!-- /Stats Row Ends Here -->
                     <!-- Card Sextion Starts Here -->
-                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
-                        <!-- card -->
+                    <!--<div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+                        <!-- card 
                         <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
                             <div class="px-6 py-2 border-b border-light-grey">
                                 <div class="font-bold text-xl">Trending Categories</div>
@@ -125,8 +125,8 @@
                                 </table>
                             </div>
                         </div>
-                        <!-- /card -->
-                    </div>
+                        <!-- /card
+                    </div>-->
                     <!-- /Cards Section Ends Here -->
                     <!-- Progress Bar -->
                     <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">
@@ -167,9 +167,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--Profile Tabs-->
+                    <!--Profile Tabs
                     <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 p-1 mt-2 mx-auto lg:mx-2 md:mx-2 justify-between">
-                        <!--Top user 1-->
+                        <!--Top user 
                         <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                             <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                             <div class="flex justify-center -mt-8">
@@ -194,7 +194,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--Top user 2-->
+                        <!--Top user 
                         <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                             <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                             <div class="flex justify-center -mt-8">
@@ -219,7 +219,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--Top user 3-->
+                        <!--Top user 
                         <div class="rounded rounded-t-lg overflow-hidden shadow max-w-xs my-3">
                             <img src="https://i.imgur.com/w1Bdydo.jpg" alt="" class="w-full" />
                             <div class="flex justify-center -mt-8">
@@ -245,11 +245,11 @@
                             </div>
                         </div>
                     </div>
-                    <!--/Profile Tabs-->
-                </div>
+                   </Profile Tabs>
+                </div>-->
             </main>
             <!--/Main-->
-        </div>      
+              
 </asp:Content>
 
 
