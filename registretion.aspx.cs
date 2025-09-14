@@ -20,7 +20,6 @@ public partial class testreg : System.Web.UI.Page
     {
         try
         {
-
             // Get connection string from Web.config
 
 
@@ -30,9 +29,11 @@ public partial class testreg : System.Web.UI.Page
             string FullName = txtFullName.Text.Trim();
             string Password = txtPassword.Text.Trim();
             string MobileNumber = txtMobile.Text.Trim();
-            string UserType = ddlUserType.SelectedValue;
-           
-            string query = "INSERT INTO REGISTRETION (Email,FullName,Password,MobileNumber,UserType) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "','" + UserType + "')";
+            string Country = DropDownList1.SelectedValue;
+            string State = DropDownList2.SelectedValue;
+
+
+            string query = "INSERT INTO USER_REGISTRETION (Email,FullName,Password,MobileNumber,Country,State) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "','" + Country + "','" + State + "')";
             SqlCommand cmd = new SqlCommand(query, cn);
 
             cn.Open();
@@ -41,13 +42,16 @@ public partial class testreg : System.Web.UI.Page
             cn.Close();
             if (i > 0)
             {
-                ClearFields();
                 Response.Redirect("signin.aspx");
+                ClearFields();
+
+
             }
             else
             {
                 Response.Write("<script>aletr('something wrong')</script>");
             }
+
 
         }
         catch (Exception ex)
@@ -63,6 +67,9 @@ public partial class testreg : System.Web.UI.Page
         txtFullName.Text = "";
         txtPassword.Text = "";
         txtMobile.Text = "";
-        ddlUserType.SelectedValue = "";
+        DropDownList1.SelectedValue = "";
+        DropDownList1.SelectedValue = "";
     }
+
+   
 }

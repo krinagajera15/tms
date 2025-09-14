@@ -14,13 +14,15 @@
                 <link rel="stylesheet" href="./dist/all.css"/>
                 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet"/>
                  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Dashboard | Tailwind Admin</title>
-   
+    
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
 
@@ -37,9 +39,45 @@
                             </div>
                             <div class="p-1 flex flex-row items-center">
                                 <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
+                                <asp:Image ID="imgProfile" runat="server" CssClass="rounded-circle" Width="40" Height="40" />
+                                <asp:Label ID="lblWelcome" runat="server" CssClass="ms-2 mb-0 text-dark"></asp:Label>
+                                 <div class="dropdown" style="display: inline-block;">
+                                    <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        
+                                       <asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>
+
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                        <li><hr class="dropdown-divider"></li>
+                                            <asp:LinkButton ID="LinkButton1" class="dropdown-item" runat="server">My Profile</asp:LinkButton>
+                                            <%--<a class="dropdown-item" href="profile.aspx">My Profile</a>--%></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="dropdown-item" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <%--<div class="dropdown" style="position: relative; display: inline-block;">
+                                    <asp:Image ID="imgProfile" runat="server" CssClass="profile-pic dropdown-toggle" 
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                                    <asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>
+                                <asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="#">My Profile</a>
+                                        <asp:LinkButton ID="lnkLogout" runat="server" CssClass="dropdown-item" OnClick="lnkLogout_Click" Visible="false">Logout</asp:LinkButton>--%>
+                                        <%--<asp:LinkButton ID="LinkButton1" runat="server" CssClass="dropdown-item" 
+                                          OnClick="lnkLogout_Click1">Logout</asp:LinkButton>--%>
+                                    <%--  </div>
+                                </div>--%>
+
+                                <%--<a href="#"><asp:Image ID="imgProfile" runat="server" CssClass="round-profile" Width="50px" Height="50px" ImageUrl="~/profile_photo/team-2.jpg"/></a>--%>
+                                <%--<asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>--%>
+                                <%--<asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>--%>
+                                <%--<asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Visible="false">Logout</asp:LinkButton>--%>
 
 
-                                <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
+                                <%--<img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
                                 <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
                                 <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
                                     <ul class="list-reset">
@@ -49,96 +87,98 @@
                                       <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            --%></div>
                         </div>
                     </header>
                   <!--/Header-->
 
-                    <div class="flex flex-1">
-                      <!--Sidebar-->
-                        <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+                   <div class="flex flex-1">
+            <!--Sidebar-->
+            <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
 
-                            <ul class="list-reset flex flex-col">
-                                <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-                                    <a href="index.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                                        Dashboard
-                                        <span><i class="fas fa-angle-right float-right"></i></span>
-                                    </a>
-                                </li>
-                                <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                    <a href="truckrequest.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fab fa-wpforms float-left mx-2"></i>
-                                        Truck Request
-                                        <span><i class="fa fa-angle-right float-right"></i></span>
-                                    </a>
-                                </li>
-                                <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                    <a href="userregistretion.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fab fa-wpforms float-left mx-2"></i>
-                                        Location Master
-                                        <span><i class="fa fa-angle-right float-right"></i></span>
-                                    </a>
-                                </li>
-                                                              
-                            <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                    <a href="forms.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fab fa-wpforms float-left mx-2"></i>
-                                        Cutoff Master
-                                        <span><i class="fa fa-angle-right float-right"></i></span>
-                                    </a>
-                             </li>
-                           <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                    <a href="forms.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fab fa-wpforms float-left mx-2"></i>
-                                        Bid Details View
-                                        <span><i class="fa fa-angle-right float-right"></i></span>
-                                    </a>
-                                </li>
-                                 <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                    <a href="forms.aspx"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="fab fa-wpforms float-left mx-2"></i>
-                                        User Detail
-                                        <span><i class="fa fa-angle-right float-right"></i></span>
-                                    </a>
-                                </li>
-                                 <li class="w-full h-full py-3 px-2">
-                                    <a href="#"
-                                       class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                        <i class="far fa-file float-left mx-2"></i>
-                                        Vendor 
-                                        <span><i class="fa fa-angle-down float-right"></i></span>
-                                    </a>
-                                    <ul class="list-reset -mx-2 bg-white-medium-dark">
-                                        <li class="border-t mt-2 border-light-border w-full h-full px-2 py-3">
-                                            <a href="login.html"
-                                               class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                                Vendor Detailed
-                                                <span><i class="fa fa-angle-right float-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li class="border-t border-light-border w-full h-full px-2 py-3">
-                                            <a href="register.html"
-                                               class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                                Vendor Pincode
-                                                <span><i class="fa fa-angle-right float-right"></i></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            
-                          
-                          
+                <ul class="list-reset flex flex-col">
+                    <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                        <a href="index.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-tachometer-alt float-left mx-2"></i>
+                            Dashboard
+                            <span><i class="fas fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="Form.aspx"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fab fa-wpforms float-left mx-2"></i>
+                            Forms
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="buttons.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-grip-horizontal float-left mx-2"></i>
+                            Buttons
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="Form.aspx"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-table float-left mx-2"></i>
+                            Tables
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="ui.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fab fa-uikit float-left mx-2"></i>
+                            Ui components
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-300-border">
+                        <a href="modals.html" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-square-full float-left mx-2"></i>
+                            Modals
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2">
+                        <a href="#"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="far fa-file float-left mx-2"></i>
+                            Pages
+                            <span><i class="fa fa-angle-down float-right"></i></span>
+                        </a>
+                        <ul class="list-reset -mx-2 bg-white-medium-dark">
+                            <li class="border-t mt-2 border-light-border w-full h-full px-2 py-3">
+                                <a href="login.html"
+                                   class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                    Login Page
+                                    <span><i class="fa fa-angle-right float-right"></i></span>
+                                </a>
+                            </li>
+                            <li class="border-t border-light-border w-full h-full px-2 py-3">
+                                <a href="register.html"
+                                   class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                    Register Page
+                                    <span><i class="fa fa-angle-right float-right"></i></span>
+                                </a>
+                            </li>
+                            <li class="border-t border-light-border w-full h-full px-2 py-3">
+                                <a href="404.html"
+                                   class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                    404 Page
+                                    <span><i class="fa fa-angle-right float-right"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
-                        </aside>
-                <!--/Sidebar-->
+            </aside>
+            <!--/Sidebar-->
 
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
@@ -155,9 +195,9 @@
 
     </div>
 
-</div>
-<script src="./main.js"></script>
-        </asp:ContentPlaceHolder>
+
+        <script src="./main.js"></script>
+    </asp:ContentPlaceHolder>
     </div>
     </form>
 </body>

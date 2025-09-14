@@ -23,7 +23,7 @@ public partial class login : System.Web.UI.Page
         
 
 
-        string query = "SELECT Email,FullName,UserType FROM REGISTRETION WHERE Email = '" + email + "' AND Password = '" + password + "'";
+        string query = "SELECT U_ID,Email,FullName,Password FROM USER_REGISTRETION WHERE Email = '" + email + "' AND Password = '" + password + "'";
 
         SqlCommand cmd = new SqlCommand(query, cn);
 
@@ -33,25 +33,14 @@ public partial class login : System.Web.UI.Page
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
-            {
-                string UserType = dr["UserType"].ToString();
-
+            { 
+                string U_ID = dr["U_ID"].ToString();
+                Session["U_ID"] = U_ID;
                 Session["FullName"] = dr["FullName"].ToString();
                 Session["UserEmail"] = email;
-                Session["UserType"] = UserType;
+                Response.Redirect("index.aspx?U_ID="+ U_ID);
 
-                if (UserType == "Admin")
-                {
-                    Response.Redirect("admin/adminindex.aspx");
-                }
-                //else if (UserType == "Client")
-                //{
-                //    Response.Redirect("UserDashboard.aspx");
-                //}
-                else if (UserType == "User") 
-                {
-                    Response.Redirect("index.aspx");
-                }
+
             }
             else
             {

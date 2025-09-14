@@ -31,6 +31,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet"/>
+
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -70,8 +71,8 @@
                          <div class="nav-item dropdown">
                                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</asp:LinkButton >
                              <div class="dropdown-menu fade-up m-0">
-                                 <a href="feature.aspx" class="dropdown-item">Features</a> <a href="truckrequest.aspx" class="dropdown-item">Truck Request</a>
-                             </div>
+                                 <a href="feature.aspx" class="dropdown-item">Features</a> <a href="truckrequest.aspx" class="dropdown-item">Truck Request</a> 
+                           </div>
                          </div>
                          <a href="contact.aspx" class="nav-item nav-link">Contact</a>
                      </div>
@@ -93,7 +94,7 @@
                          <div class="col-lg-3 col-md-6">
                              <h4 class="text-light mb-4">Address</h4>
                              <p class="mb-2">
-                                 <i class="fa fa-map-marker-alt me-3"></i>varacha-Surat,Gujrat,India</p>
+                                 <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                              <p class="mb-2">
                                  <i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                              <p class="mb-2">
@@ -155,7 +156,8 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
+    
+
     <script src="js/main.js"></script>
         </asp:ContentPlaceHolder>
     </div>

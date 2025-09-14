@@ -25,7 +25,7 @@ public partial class admin_userregistretion : System.Web.UI.Page
     {
         using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString))
         {
-            string query = "SELECT USER_ID, Email, FullName,Password,MobileNumber,UserType FROM REGISTRETION";
+            string query = "SELECT USER_ID, Email, FullName,Password,MobileNumber,Country,State FROM USER_REGISTRETION";
             SqlCommand cmd = new SqlCommand(query, con);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

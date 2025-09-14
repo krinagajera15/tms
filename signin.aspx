@@ -40,6 +40,7 @@
     <form id="form1" runat="server">
     <div class="login-box">
             <h1>Sign in</h1>
+            
             <asp:TextBox ID="txtEmail" runat="server" Placeholder="Enter Email" Width="278px" />
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Placeholder="Enter Password" Width="281px" />
         <br /><br /><br />

@@ -52,7 +52,8 @@
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                        <%--<img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">--%>
+                        <asp:FileUpload ID="FileUpload1" runat="server"/>
                     </div>
                 </div>
                 <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
@@ -155,7 +156,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/mini.jpg" alt=""/>
+                            <img class="img-fluid" src="img/mini.jpg" alt="">
                         </div>
                         <h4 class="mb-3">Road Freight</h4>
                         <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
@@ -309,7 +310,7 @@
     Pricing End -->
 
 
-   <%-- <!-- Quote Start -->
+    <!-- Quote Start -->
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
@@ -359,10 +360,10 @@
             </div>
         </div>
     </div>
-    <!-- Quote End -->--%>
+    <!-- Quote End -->
 
 
-  <%--  <!-- Team Start -->
+    <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -441,7 +442,7 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->--%>
+    <!-- Team End -->
 
 
     <!-- Testimonial Start -->

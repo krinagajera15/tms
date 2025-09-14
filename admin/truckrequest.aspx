@@ -18,11 +18,11 @@
             <asp:BoundField DataField="TR_ENDDATE" HeaderText="TR_ENDDATE" SortExpression="TR_ENDDATE" />
             <asp:BoundField DataField="NO_OF_TRUCK" HeaderText="NO_OF_TRUCK" SortExpression="NO_OF_TRUCK" />
             <asp:BoundField DataField="REMARKS" HeaderText="REMARKS" SortExpression="REMARKS" />
-            <asp:CommandField ShowEditButton="True" ControlStyle-CssClass="fas fa-edit" ControlStyle-BackColor="LightSeaGreen" />
-            <asp:CommandField ShowDeleteButton="True"  ControlStyle-CssClass="fas fa-trash" ControlStyle-BackColor="Red"  />
+            <asp:CommandField ShowEditButton="True"  ButtonType="Image" EditImageUrl="../img/icons8-edit-pencil-50.png" UpdateImageUrl="~/img/updated (1).png" ControlStyle-Height="30" ControlStyle-Width="30" CancelImageUrl="../img/delete.png" />
+            <asp:CommandField ShowDeleteButton="True"  ButtonType="Image" DeleteImageUrl="../img/icons8-delete-button-50.png" ControlStyle-Height="30" ControlStyle-Width="30" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TMSConnectionString %>" SelectCommand="SELECT * FROM [TR_REQUEST]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT * FROM [TR_REQUEST]"></asp:SqlDataSource>
     </div>
   </div>
 </asp:Content>

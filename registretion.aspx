@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         .body{
-            background-image:url("1.jpg");
+            background-image:url("img/bg.jpg");
         }
         .form-container {
             max-width: 700px;
@@ -45,17 +45,20 @@
                 <label>Mobile Number</label>
                 <asp:TextBox ID="txtMobile" runat="server" CssClass="form-control" MaxLength="10" TextMode="Phone" required="true" />
             </div>
-
             <div class="mb-3">
-                <label>User Type</label>
-                <asp:DropDownList ID="ddlUserType" runat="server" CssClass="form-select" >
-                    <asp:ListItem Text="Select User Type" Value="" />
-                    <asp:ListItem Text="Admin" Value="Admin" />
-                    <asp:ListItem Text="User" Value="User" />
-                    <asp:ListItem Text="Transporter" Value="Transporter" />
-                </asp:DropDownList>
+                <label>Country</label>
+                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CountryName" DataValueField="CountryID"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT [CountryName], [CountryID] FROM [Country]"></asp:SqlDataSource>
             </div>
-
+            <div class="mb-3">
+                <label>State</label>
+                <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" DataSourceID="SqlDataSource2" DataTextField="StateName" DataValueField="StateID"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT [StateID], [StateName] FROM [State] WHERE ([CountryID] = @CountryID)">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" Name="CountryID" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
 
             <div class="text-center">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="btnRegister_Click" />
