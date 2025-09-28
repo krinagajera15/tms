@@ -15,11 +15,7 @@ public partial class quote : System.Web.UI.Page
     {
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
 
-        if (Request.QueryString["U_ID"] != null)
-        {
-            string U_ID = Request.QueryString["U_ID"].ToString();
-
-        }
+       
         if (Session["FullName"] != null)
         {
             txtid.Text = Session["FullName"].ToString();

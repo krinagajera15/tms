@@ -37,7 +37,7 @@
         </div>
         <div class="tab-pane fade" id="pincode" role="tabpanel">
             <%-- Pincode form content --%>
-            <iframe src="pincode_form.aspx" width="250%" height="600" style="border:none; overflow:hidden;" scrolling="no"></iframe>
+            <iframe src="pincode_table.aspx" width="250%" height="600" style="border:none; overflow:hidden;" scrolling="no"></iframe>
         </div>
     </div>
 </div></center>

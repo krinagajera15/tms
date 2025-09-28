@@ -1,132 +1,118 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminmaster.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="admin_index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Vendor Bids Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px;
+            flex: 1 0 25%;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .card p {
+            font-size: 18px;
+            margin: 5px 0 0;
+        }
+        .stats-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        .stats-table th, .stats-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .stats-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        .up {
+            color: green;
+            font-weight: bold;
+        }
+        .down {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Colors */
+        .approved-card { background-color: #28a745; } /* Green */
+        .pending-card { background-color: #ffc107; color: black; }  /* Yellow */
+        .rejected-card { background-color: #dc3545; } /* Red */
+    </style>
+    
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
       <!--Main-->
             <main class="bg-white-300 flex-1 p-3 overflow-hidden">
                 <div class="flex flex-col">
                     <!-- Stats Row Starts Here -->
-                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
-                        <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
-                            <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    $244
-                                </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Total Sales
-                                </a>
-                            </div>
-                        </div>
-                        <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
-                            <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    $199.4
-                                </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Total Cost
-                                </a>
-                            </div>
-                        </div>
-                        <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
-                            <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    900
-                                </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Total Users
-                                </a>
-                            </div>
-                        </div>
-                        <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
-                            <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    500
-                                </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Total Products
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                      <div>
+        <div class="row">
+    <!-- Approved Card -->
+    <div class="col-md-4">
+        <div class="card approved-card">
+            <h2><asp:Label ID="lblApproved" runat="server" Text="0"></asp:Label></h2>
+            <p>Approved Bids</p>
+        </div>
+    </div>
+
+    <!-- Pending Card -->
+    <div class="col-md-4">
+        <div class="card pending-card">
+            <h2><asp:Label ID="lblPending" runat="server" Text="0"></asp:Label></h2>
+            <p>Pending Bids</p>
+        </div>
+    </div>
+
+    <!-- Rejected Card -->
+    <div class="col-md-4">
+        <div class="card rejected-card">
+            <h2><asp:Label ID="lblRejected" runat="server" Text="0"></asp:Label></h2>
+            <p>Rejected Bids</p>
+        </div>
+    </div>
+</div>
+    </div>
                     <!-- /Stats Row Ends Here -->
-                    <!-- Card Sextion Starts Here -->
-                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
-                        <!-- card -->
-                        <div class="rounded overflow-hidden shadow bg-white mx-2 w-full">
-                            <div class="px-6 py-2 border-b border-light-grey">
-                                <div class="font-bold text-xl">Trending Categories</div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table text-grey-darkest">
-                                    <thead class="bg-grey-dark text-white text-normal">
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Item</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Current</th>
-                                            <th scope="col">Change</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>
-                                                <button class="bg-blue-500 hover:bg-blue-800 text-white font-light py-1 px-2 rounded-full">
-                                                    Twitter
-                                                </button>
-                                            </td>
-                                            <td>4500</td>
-                                            <td>4600</td>
-                                            <td>
-                                                <span class="text-green-500"><i class="fas fa-arrow-up"></i>5%</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>
-                                                <button class="bg-primary hover:bg-primary-dark text-white font-light py-1 px-2 rounded-full">
-                                                    Facebook
-                                                </button>
-                                            </td>
-                                            <td>10000</td>
-                                            <td>3000</td>
-                                            <td>
-                                                <span class="text-red-500"><i class="fas fa-arrow-down"></i>65%</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>
-                                                <button class="bg-success hover:bg-success-dark text-white font-light py-1 px-2 rounded-full">
-                                                    Amazon
-                                                </button>
-                                            </td>
-                                            <td>10000</td>
-                                            <td>3000</td>
-                                            <td>
-                                                <span class="text-red-500"><i class="fas fa-arrow-down"></i>65%</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>
-                                                <button class="bg-blue-500 hover:bg-blue-800 text-white font-light py-1 px-2 rounded-full">
-                                                    Microsoft
-                                                </button>
-                                            </td>
-                                            <td>10000</td>
-                                            <td>3000</td>
-                                            <td>
-                                                <span class="text-green-500"><i class="fas fa-arrow-up"></i>65%</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- /card -->
-                    </div>
+                   <!-- Cards Section Ends Here -->
+                     <asp:GridView ID="gvStats" runat="server" AutoGenerateColumns="False" CssClass="stats-table">
+            <Columns>
+                <asp:BoundField DataField="SrNo" HeaderText="#" />
+                <asp:BoundField DataField="Item" HeaderText="Item" />
+                <asp:BoundField DataField="Last" HeaderText="Last" />
+                <asp:BoundField DataField="Current" HeaderText="Current" />
+            </Columns>
+        </asp:GridView>
+
                     <!-- /Cards Section Ends Here -->
                     <!-- Progress Bar -->
                     <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2 mt-2">

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         .body{
-            background-image:url("img/bg.jpg");
+            background-image:url("img/bg1.jpg");
         }
         .form-container {
             max-width: 700px;

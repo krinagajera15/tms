@@ -71,7 +71,8 @@
                          <div class="nav-item dropdown">
                                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</asp:LinkButton >
                              <div class="dropdown-menu fade-up m-0">
-                                 <a href="feature.aspx" class="dropdown-item">Features</a> <a href="truckrequest.aspx" class="dropdown-item">Truck Request</a> 
+                                  <a href="truckrequest.aspx" class="dropdown-item">Truck Request</a>
+                                  <a href="biddetails.aspx" class="dropdown-item">Bid Details</a> 
                            </div>
                          </div>
                          <a href="contact.aspx" class="nav-item nav-link">Contact</a>

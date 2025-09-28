@@ -27,8 +27,8 @@ public partial class Vendor_registretion : System.Web.UI.Page
             string Password = txtPassword.Text.Trim();
             string MobileNumber = txtMobile.Text.Trim();
 
-            string query = "INSERT INTO VENDOR_MASTER (Email,FullName,Password,MOBILE_NUMBER, PHOTO) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "','" + prophoto.FileName + "')";
-            //Response.Write("INSERT INTO VENDOR_MASTER (Email,FullName,Password,MOBILE_NUMBER, PHOTO) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "','" + prophoto.FileName + "')");
+            string query = "INSERT INTO VENDOR_MASTER (Email,FullName,Password,MOBILE_NUMBER ) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "')";
+            //Response.Write("INSERT INTO VENDOR_MASTER (Email,FullName,Password,MOBILE_NUMBER) VALUES ('" + Email + "','" + FullName + "','" + Password + "','" + MobileNumber + "')");
             SqlCommand cmd = new SqlCommand(query, cn);
 
             cn.Open();
@@ -37,10 +37,8 @@ public partial class Vendor_registretion : System.Web.UI.Page
             cn.Close();
             if (i > 0)
             {
-                ClearFields();
-                if (prophoto.HasFile)
-                    prophoto.SaveAs(Server.MapPath("~/profile_photo/") + "//" + prophoto.FileName);
                 Response.Redirect("~/Vendor/vendor_login.aspx");
+                ClearFields();
 
             }
             else

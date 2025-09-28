@@ -45,12 +45,7 @@
                 <label>Mobile Number</label>
                 <asp:TextBox ID="txtMobile" runat="server" CssClass="form-control" MaxLength="10" TextMode="Phone" required="true" />
             </div>
-            <div class="mb-3">
-                <label>Photo    </label>
-                <asp:FileUpload ID="prophoto" runat="server" CssClass="form-control"/>
-            </div>
            
-
             <div class="text-center">
                 <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="btnRegister_Click" />
             </div>

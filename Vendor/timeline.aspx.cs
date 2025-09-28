@@ -32,12 +32,7 @@ public partial class timeline : System.Web.UI.Page
                 }
         // ✅ Correct table name + safe parameter
         string qry = @"SELECT pm.Status, pm.UpdateTime, c.CountryName,s.StateName, ci.CityName,p.Pincode FROM PINCODE_MAPPING pm JOIN Country c ON pm.CountryID = c.CountryID JOIN State s ON pm.StateID = s.StateID JOIN City ci ON pm.CityID = ci.CityID JOIN Pincode p ON pm.PincodeID = p.PincodeID  WHERE pm.V_ID =@V_ID ORDER BY pm.PM_ID ASC";
-
-
-
-
-
-                Response.Write(qry);
+               
 
                 // ✅ using statement for safe connection handling
 

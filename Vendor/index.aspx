@@ -50,44 +50,45 @@
                     <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
                         <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
                             <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
+                                <a href="userdetails.aspx" class="no-underline text-white text-2xl">
                                     Total User
                                 </a>
-                                <a href="#" class="no-underline text-white text-lg">
+                                <a href="userdetails.aspx" class="no-underline text-white text-lg">
                                     Total User
-                                </a>
-                            </div>
-                        </div>
-                        <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
-                            <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    Location Table
-                                </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Location Table
                                 </a>
                             </div>
                         </div>
                         <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
                             <div class="p-4 flex flex-col">
-                                <a href="truckrequestdata.aspx" class="no-underline text-white text-2xl">
-                                    Truck Request
+                                <a href="addbid.aspx" class="no-underline text-white text-2xl">
+                                    Add Bid
                                 </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Truck Request
+                                <a href="addbid.aspx" class="no-underline text-white text-lg">
+                                    Add Bid
                                 </a>
                             </div>
                         </div>
                         <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
                             <div class="p-4 flex flex-col">
-                                <a href="#" class="no-underline text-white text-2xl">
-                                    Bid
+                                <a href="showbidditeil.aspx" class="no-underline text-white text-2xl">
+                                    Show Bid
                                 </a>
-                                <a href="#" class="no-underline text-white text-lg">
-                                    Bid
+                                <a href="showbidditeil.aspx" class="no-underline text-white text-lg">
+                                     Show Bid
+                                </a>
+                            </div>
+                     </div>
+                        <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="truckrequestdata.aspx" class="no-underline text-white text-2xl">
+                                    Show Truck Request
+                                </a>
+                                <a href="truckrequestdata.aspx" class="no-underline text-white text-lg">
+                                    Show Truck Request
                                 </a>
                             </div>
                         </div>
+                           
                     </div>
                     <!-- /Stats Row Ends Here -->
      </div>

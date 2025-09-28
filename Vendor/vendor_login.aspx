@@ -47,7 +47,7 @@
             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Width="315px" />
          
             <div class="links">
-                <a href="registretion.aspx">Don't have an account? Sign Up</a><br /><br />
+                <a href="vendor_registretion.aspx">Don't have an account? Sign Up</a><br /><br />
                 <a href="ForgotPassword.aspx">Forgot Password?</a>
             </div>
         </div>

@@ -18,12 +18,12 @@ public partial class admin_login : System.Web.UI.Page
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        string email = txtEmail.Text.Trim();
+        string Email = txtEmail.Text.Trim();
         string password = txtPassword.Text.Trim();
 
 
 
-        string query = "SELECT * FROM USER_REG WHERE (Email='krina@gmail.com' or Email='prinjal@gmail.com') AND Password = '" + password + "'";
+        string query = "SELECT * FROM USER_REGISTRETION WHERE (Email='krina@gmail.com' or Email='prinjal@gmail.com') AND Password = '" + password + "'";
 
         SqlCommand cmd = new SqlCommand(query, cn);
 
@@ -35,15 +35,15 @@ public partial class admin_login : System.Web.UI.Page
             if (dr.Read())
             {
                 Session["U_ID"] = dr["U_ID"].ToString();
-                Session["Profile_Photo"] = dr["Profile_Photo"].ToString();
                 Session["FullName"] = dr["FullName"].ToString();
-                Session["UserEmail"] = dr["FullName"].ToString();
+                Session["Email"] = dr["Email"].ToString();
                 Response.Redirect("index.aspx");
 
             }
             else
             {
                 Response.Write("<script>alert('Invalid Email or Password!');</script>");
+                Response.Redirect("~/admin/index.aspx");
             }
             cn.Close();
 

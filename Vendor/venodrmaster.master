@@ -74,11 +74,11 @@
                  </button>
                  <div class="collapse navbar-collapse" id="navbarCollapse">
                      <div class="navbar-nav ms-auto p-4 p-lg-0">
-                         <a href="index.aspx" class="nav-item nav-link active">Home</a> <a href="about.aspx" class="nav-item nav-link">Form</a> <a href="service.aspx" class="nav-item nav-link">location</a>
+                         <a href="index.aspx" class="nav-item nav-link active">Home</a> <a href="addbid.aspx" class="nav-item nav-link">Add Bid</a> <a href="showbidditeil.aspx" class="nav-item nav-link">Show Bid</a>
                          <div class="nav-item dropdown">
                                 <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</asp:LinkButton >
                              <div class="dropdown-menu fade-up m-0">
-                                 <a href="feature.aspx" class="dropdown-item">Features</a> <a href="timeline.aspx" class="dropdown-item">Truck Request</a>
+                                 <a href="userdetails.aspx" class="dropdown-item">User Data</a> <a href="truckrequestdata.aspx" class="dropdown-item">Truck Data</a>
                              </div>
                          </div>
                          <a href="contact.aspx" class="nav-item nav-link">Contact</a>

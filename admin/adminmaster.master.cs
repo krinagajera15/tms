@@ -11,55 +11,43 @@ using System.Configuration;
 public partial class admin_adminmaster : System.Web.UI.MasterPage
 {
     SqlConnection cn;
-
     protected void Page_Load(object sender, EventArgs e)
     {
+
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-        //if (!IsPostBack)
-        //{
-        if (Session["FullName"] != null && Session["U_ID"] != null)
+        if (!IsPostBack)
         {
-            lblWelcome.Text = "Welcome, " + Session["FullName"].ToString();
-            lnkLogout.Visible = true;
-            lnkLogin.Visible = false;
-            imgProfile.Visible = true;
-            SqlCommand cmd = new SqlCommand("select profile_photo from USER_REGISTRETION where U_ID=" + Session["U_ID"], cn);
-            try
+            if (Session["Email"] != null)
             {
-                cn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.HasRows && dr.Read())  // Ensure the reader has data and then read it
+                string Email = Convert.ToString(Session["Email"]);
+                //LoadVendorBids(V_ID);
+                if (Session["FullName"] != null && Session["Email"] != null)
                 {
-                    // Assuming the profile photo path is stored in the first column of the result
-                    string profile_photo = dr["profile_photo"].ToString();
-                    if (profile_photo.StartsWith("~"))
-                        imgProfile.ImageUrl = profile_photo; // Already has path
-                    else
-                        imgProfile.ImageUrl = "~/img/profile_photo/" + profile_photo;
+                    lblWelcome.Text = "Welcome, " + Session["FullName"].ToString();
+                    lnkLogout.Visible = true;
                 }
+                //else
+                //{
+                //    lblWelcome.Text = "";
+                //    lnkLogout.Visible = false;
+                //}
             }
-
-            finally
+            else
             {
-                cn.Close();
+                Response.Redirect("~/admin/login.aspx");
             }
-        }
-        else
-        {
-            lblWelcome.Text = "";
-            lnkLogout.Visible = false;
-            lnkLogin.Visible = true;
-            imgProfile.Visible = false;
         }
     }
 
+    //private void LoadVendorBids(int v_ID)
+    //{
+    //    throw new NotImplementedException();
+    //}
 
     protected void lnkLogout_Click(object sender, EventArgs e)
     {
         Session.Clear();
         Session.Abandon();
-        Response.Redirect("index.aspx");
+        Response.Redirect("~/admin/login.aspx");
     }
-
 }

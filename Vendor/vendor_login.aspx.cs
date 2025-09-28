@@ -12,6 +12,8 @@ using System.Configuration;
 public partial class Vendor_login : System.Web.UI.Page
 {
     SqlConnection cn;
+    private string V_ID;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
@@ -36,11 +38,11 @@ public partial class Vendor_login : System.Web.UI.Page
 
             if (dr.Read())
             {
-                string V_ID= dr["V_ID"].ToString();
-                Session["V_ID"] = V_ID;
+                
+                Session["V_ID"] = dr["V_ID"].ToString();            
                 Session["FullName"] = dr["FullName"].ToString();
                 Session["UserEmail"] = email;
-                Response.Redirect("~/Vendor/index.aspx?V_ID="+ V_ID);
+                Response.Redirect("index.aspx?V_ID="+ V_ID);
 
             }
             else

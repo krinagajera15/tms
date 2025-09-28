@@ -35,59 +35,13 @@
                         <div class="flex justify-between">
                             <div class="p-1 mx-3 inline-flex items-center">
                                 <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
-                                <h1 class="text-white p-2">Logo</h1>
+                                <h1 class="text-white p-2">TMS</h1>
                             </div>
                             <div class="p-1 flex flex-row items-center">
-                                <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
-                                <asp:Image ID="imgProfile" runat="server" CssClass="rounded-circle" Width="40" Height="40" />
-                                <asp:Label ID="lblWelcome" runat="server" CssClass="ms-2 mb-0 text-dark"></asp:Label>
-                                 <div class="dropdown" style="display: inline-block;">
-                                    <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                        
-                                       <asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>
-
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                        <li><hr class="dropdown-divider"></li>
-                                            <asp:LinkButton ID="LinkButton1" class="dropdown-item" runat="server">My Profile</asp:LinkButton>
-                                            <%--<a class="dropdown-item" href="profile.aspx">My Profile</a>--%></li>
-                                        <li><hr class="dropdown-divider"></li>
-                                        <li>
-                                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="dropdown-item" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                                <%--<div class="dropdown" style="position: relative; display: inline-block;">
-                                    <asp:Image ID="imgProfile" runat="server" CssClass="profile-pic dropdown-toggle" 
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
-                                    <asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>
-                                <asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">My Profile</a>
-                                        <asp:LinkButton ID="lnkLogout" runat="server" CssClass="dropdown-item" OnClick="lnkLogout_Click" Visible="false">Logout</asp:LinkButton>--%>
-                                        <%--<asp:LinkButton ID="LinkButton1" runat="server" CssClass="dropdown-item" 
-                                          OnClick="lnkLogout_Click1">Logout</asp:LinkButton>--%>
-                                    <%--  </div>
-                                </div>--%>
-
-                                <%--<a href="#"><asp:Image ID="imgProfile" runat="server" CssClass="round-profile" Width="50px" Height="50px" ImageUrl="~/profile_photo/team-2.jpg"/></a>--%>
-                                <%--<asp:Label ID="lblWelcome" runat="server" Text=""></asp:Label>--%>
-                                <%--<asp:LinkButton ID="lnkLogin" runat="server" PostBackUrl="~/admin/login.aspx" Visible="false">Login</asp:LinkButton>--%>
-                                <%--<asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" Visible="false">Logout</asp:LinkButton>--%>
-
-
-                                <%--<img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
-                                <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
-                                <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
-                                    <ul class="list-reset">
-                                      <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
-                                      <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
-                                      <li><hr class="border-t mx-2 border-grey-ligght"></li>
-                                      <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
-                                    </ul>
-                                </div>
-                            --%></div>
+                                <a href="https://github.com/krinagajera15/tmsproject.git" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
+                                <asp:Label ID="lblWelcome" runat="server"  class="text-white p-2 mr-2 no-underline hidden md:block lg:block"></asp:Label>
+                                <asp:LinkButton ID="lnkLogout" runat="server" PostBackUrl="~/admin/login.aspx">Logout</asp:LinkButton>
+                            </div>
                         </div>
                     </header>
                   <!--/Header-->
@@ -98,7 +52,7 @@
 
                 <ul class="list-reset flex flex-col">
                     <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-                        <a href="index.html"
+                        <a href="index.aspx"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="fas fa-tachometer-alt float-left mx-2"></i>
                             Dashboard
@@ -106,41 +60,79 @@
                         </a>
                     </li>
                     <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                        <a href="Form.aspx"
+                        <a href="form1.aspx"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="fab fa-wpforms float-left mx-2"></i>
                             Forms
                             <span><i class="fa fa-angle-right float-right"></i></span>
                         </a>
                     </li>
-                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                        <a href="buttons.html"
+                   <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="cutoffmaster.aspx"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                            <i class="fas fa-grip-horizontal float-left mx-2"></i>
-                            Buttons
+                            <i class="fab fa-uikit float-left mx-2"></i>
+                             Cuttof Time
                             <span><i class="fa fa-angle-right float-right"></i></span>
                         </a>
                     </li>
                     <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="biddetailshow.aspx"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fab fa-uikit float-left mx-2"></i>
+                            Bid Details
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                     <li class="w-full h-full py-3 px-2 border-b border-light-border">
                         <a href="Form.aspx"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                            <i class="fas fa-table float-left mx-2"></i>
+                            <i class="fas fa-grip-horizontal float-left mx-2"></i>
                             Tables
                             <span><i class="fa fa-angle-right float-right"></i></span>
                         </a>
                     </li>
                     <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                        <a href="ui.html"
+                        <a href="services.aspx"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-table float-left mx-2"></i>
+                            ADD Services
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                      <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="picodemapping.aspx"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-table float-left mx-2"></i>
+                            Vendor Pincode Mapping
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a href="showbid.aspx"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="fab fa-uikit float-left mx-2"></i>
-                            Ui components
+                                Show Bid Details
                             <span><i class="fa fa-angle-right float-right"></i></span>
                         </a>
                     </li>
                     <li class="w-full h-full py-3 px-2 border-b border-300-border">
-                        <a href="modals.html" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                        <a href="userdata.aspx" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="fas fa-square-full float-left mx-2"></i>
-                            Modals
+                            User Details
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                     <li class="w-full h-full py-3 px-2 border-b border-300-border">
+                        <a href="vendordetails.aspx" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-square-full float-left mx-2"></i>
+                              Vendor Details
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                     <li class="w-full h-full py-3 px-2 border-b border-300-border">
+                        <a href="truckreq.aspx" class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-square-full float-left mx-2"></i>
+                              Truck Request
                             <span><i class="fa fa-angle-right float-right"></i></span>
                         </a>
                     </li>
@@ -153,26 +145,21 @@
                         </a>
                         <ul class="list-reset -mx-2 bg-white-medium-dark">
                             <li class="border-t mt-2 border-light-border w-full h-full px-2 py-3">
-                                <a href="login.html"
+                                <a href="login.aspx"
                                    class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    Login Page
+                                    Login 
                                     <span><i class="fa fa-angle-right float-right"></i></span>
                                 </a>
                             </li>
                             <li class="border-t border-light-border w-full h-full px-2 py-3">
-                                <a href="register.html"
+                                <a href="register.aspx"
                                    class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    Register Page
+                                    Register 
                                     <span><i class="fa fa-angle-right float-right"></i></span>
                                 </a>
                             </li>
-                            <li class="border-t border-light-border w-full h-full px-2 py-3">
-                                <a href="404.html"
-                                   class="mx-4 font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    404 Page
-                                    <span><i class="fa fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
+                             
+                           
                         </ul>
                     </li>
                 </ul>
@@ -186,14 +173,14 @@
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
-            <!--Footer-->
+        <%--    <!--Footer-->
         <footer class="bg-grey-darkest text-white p-2">
             <div class="flex flex-1 mx-auto">&copy; My Design</div>
             <div class="flex flex-1 mx-auto">Distributed by:  <a href="https://themewagon.com/" target=" _blank">Themewagon</a></div>
         </footer>
         <!--/footer-->
 
-    </div>
+    </div>--%>
 
 
         <script src="./main.js"></script>

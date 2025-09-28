@@ -10,7 +10,7 @@
         .timeline {
             position: relative;
             margin: 20px 0;
-            padding-left: 40px;
+            padding-left: 33px;
         }
         .timeline::before {
             content: '';

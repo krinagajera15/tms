@@ -21,14 +21,14 @@ public partial class Vendor_venodrmaster : System.Web.UI.MasterPage
                 lblWelcome.Text = "Welcome, " + Session["FullName"].ToString();
                 lnkLogout.Visible = true;
                 lnkLogin.Visible = false;
-                LinkButton1.Visible = true;
+               
             }
             else
             {
                 lblWelcome.Text = "";
                 lnkLogout.Visible = false;
                 lnkLogin.Visible = true;
-                LinkButton1.Visible = false;
+               
 
             }
         }
