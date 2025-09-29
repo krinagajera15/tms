@@ -95,22 +95,22 @@
                          <div class="col-lg-3 col-md-6">
                              <h4 class="text-light mb-4">Address</h4>
                              <p class="mb-2">
-                                 <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                                 <i class="fa fa-map-marker-alt me-3"></i>Jagatnaka,Surat,Gujrat,India</p>
                              <p class="mb-2">
-                                 <i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                                 <i class="fa fa-phone-alt me-3"></i>+91 9924597234</p>
                              <p class="mb-2">
-                                 <i class="fa fa-envelope me-3"></i>info@example.com</p>
+                                 <i class="fa fa-envelope me-3"></i>Tms@gmail.com</p>
                              <div class="d-flex pt-2">
                                  <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a><a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a><a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                              </div>
                          </div>
                          <div class="col-lg-3 col-md-6">
                              <h4 class="text-light mb-4">Services</h4>
-                             <a class="btn btn-link" href="">Air Freight</a> <a class="btn btn-link" href="">Sea Freight</a> <a class="btn btn-link" href="">Road Freight</a> <a class="btn btn-link" href="">Logistic Solutions</a> <a class="btn btn-link" href="">Industry solutions</a>
+                             <a class="btn btn-link" href="">Open Truck</a> <a class="btn btn-link" href="">Flatbed Truck</a> <a class="btn btn-link" href="">Conteiner Truck</a> <a class="btn btn-link" href="">Tencer Truck</a> <a class="btn btn-link" href="">Mini Truck</a>
                          </div>
                          <div class="col-lg-3 col-md-6">
                              <h4 class="text-light mb-4">Quick Links</h4>
-                             <a class="btn btn-link" href="">About Us</a> <a class="btn btn-link" href="">Contact Us</a> <a class="btn btn-link" href="">Our Services</a> <a class="btn btn-link" href="">Terms & Condition</a> <a class="btn btn-link" href="">Support</a>
+                             <a class="btn btn-link" href="index.aspx">Home</a> <a class="btn btn-link" href="about.aspx">About Us</a> <a class="btn btn-link" href="service.aspx">Services</a> <a class="btn btn-link" href="truckrequest.aspx">Truck Request</a> <a class="btn btn-link" href="biddetails.aspx">Bid Details</a> <a class="btn btn-link" href="contact.aspx">Contect Us</a>
                          </div>
                          <div class="col-lg-3 col-md-6">
                              <h4 class="text-light mb-4">Newsletter</h4>
