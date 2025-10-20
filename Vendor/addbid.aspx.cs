@@ -30,7 +30,7 @@ public partial class Vendor_addbid : System.Web.UI.Page
             return;
         }
 
-        int trId = Convert.ToInt32(ddltrid.SelectedValue);
+        int trId = Convert.ToInt32(ddltrid1.SelectedValue);
         int vId = Convert.ToInt32(ddlvid.Text);
         int noOfTrucks = Convert.ToInt32(ddlnoftr.SelectedValue);
         decimal bidAmount = Convert.ToDecimal(txtBidAmount.Text);
@@ -70,8 +70,9 @@ public partial class Vendor_addbid : System.Web.UI.Page
             SqlCommand icmd = new SqlCommand(iqry, cn);
             icmd.ExecuteNonQuery();
 
-            lblMessage.Text = "Bid submitted successfully!";
-            lblMessage.ForeColor = System.Drawing.Color.Green;
+            Response.Write("<script>alert('Bid submitted successfully!');</script>");
+            //lblMessage.Text = "Bid submitted successfully!";
+            //lblMessage.ForeColor = System.Drawing.Color.Green;
         }
         else
         {
@@ -79,8 +80,9 @@ public partial class Vendor_addbid : System.Web.UI.Page
             SqlCommand uCmd = new SqlCommand(uqry, cn);
             uCmd.ExecuteNonQuery();
 
-            lblMessage.Text = "Bid updated successfully!";
-            lblMessage.ForeColor = System.Drawing.Color.Orange;
+            Response.Write("<script>alert('Bid updated successfully!');</script>");
+            //lblMessage.Text = "Bid updated successfully!";
+            //lblMessage.ForeColor = System.Drawing.Color.Orange;
         }
 
         cn.Close();

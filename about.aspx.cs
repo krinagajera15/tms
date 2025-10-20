@@ -13,16 +13,17 @@ public partial class about : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-
+        //BindAbout();
     }
-    private void BindAbout()
-    {
-        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM AboutContent", cn);
-        DataTable dt = new DataTable();
-        da.Fill(dt);
+    //private void BindAbout()
+    //{
+    //    string qry = "SELECT * FROM AboutContent";
+    //    SqlDataAdapter da = new SqlDataAdapter(qry, cn);
+    //    DataTable dt = new DataTable();
+    //    da.Fill(dt);
 
-        rptAbout.DataSource = dt;
-        rptAbout.DataBind();
-    }
+    //    rptAbout.DataSource = dt;
+    //    rptAbout.DataBind();
+    //}
 
 }

@@ -36,8 +36,9 @@ public partial class contact : System.Web.UI.Page
 
             if (i > 0)
             {
-                lblMessage.ForeColor = System.Drawing.Color.Green;
-                lblMessage.Text = "Your message has been sent successfully!";
+                Response.Write("<script>alert('Your message has been sent successfully!');</script>");
+                //lblMessage.ForeColor = System.Drawing.Color.Green;
+                //lblMessage.Text = "Your message has been sent successfully!";
                 ClearFields();
             }
             else

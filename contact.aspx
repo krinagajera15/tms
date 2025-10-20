@@ -33,23 +33,31 @@
                                         
                                              <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                                             <div class="row g-3">
+                                               
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
+                                                         Full Name:
+                                                        <asp:TextBox ID="txtName" runat="server" CssClass="form-control" ></asp:TextBox>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
+                                                        Email:
                                                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-12">
                                                     <div class="form-floating">
+                                                        Subject:
                                                         <asp:TextBox ID="txtSubject" runat="server" CssClass="form-control"></asp:TextBox>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-12">
                                                     <div class="form-floating">
+                                                        Your Messege:
                                                        <asp:TextBox ID="txtMessage" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" ></asp:TextBox>
                                                     </div>
                                                 </div>
