@@ -38,27 +38,28 @@ public partial class Vendor_addbid : System.Web.UI.Page
         cn.Open();
 
         //// 1. check bidding window
-        //string qry = "SELECT TR_STARTDATE, TR_ENDDATE FROM TR_REQUEST WHERE TR_ID='" + trId + "'";
-        //SqlCommand cmd = new SqlCommand(qry, cn);
-        //SqlDataReader dr = cmd.ExecuteReader();
-        //if (!dr.Read())
-        //{
-        //    lblMessage.Text = "Invalid Truck Request!";
-        //    dr.Close(); cn.Close(); return;
-        //}
-        //DateTime start = dr["TR_STARTDATE"] != DBNull.Value ? Convert.ToDateTime(dr["TR_STARTDATE"]) : DateTime.MaxValue;
-        //DateTime end = dr["TR_ENDDATE"] != DBNull.Value ? Convert.ToDateTime(dr["TR_ENDDATE"]) : DateTime.MaxValue;
+        string qry = "SELECT TR_STARTDATE, TR_ENDDATE FROM TR_REQUEST WHERE TR_ID='" + trId + "'";
+        SqlCommand cmd = new SqlCommand(qry, cn);
+        SqlDataReader dr = cmd.ExecuteReader();
+        if (!dr.Read())
+        {
+            lblMessage.Text = "Invalid Truck Request!";
+            dr.Close(); cn.Close(); return;
+        }
+        DateTime start = dr["TR_STARTDATE"] != DBNull.Value ? Convert.ToDateTime(dr["TR_STARTDATE"]) : DateTime.MaxValue;
+        DateTime end = dr["TR_ENDDATE"] != DBNull.Value ? Convert.ToDateTime(dr["TR_ENDDATE"]) : DateTime.MaxValue;
 
-        //dr.Close();
+        dr.Close();
 
-        //if (DateTime.Now < start || DateTime.Now > end)
-        //{
-        //    lblMessage.Text = "Bidding time is closed!";
-        //    lblMessage.ForeColor = System.Drawing.Color.Red;
-        //    cn.Close();
-        //    return;
-        //}
-        // 2. check existing bid
+        if (DateTime.Now < start || DateTime.Now > end)
+        {
+            lblMessage.Text = "";
+            Response.Write("<script>alert('Bidding time is closed!');</script>");
+            lblMessage.ForeColor = System.Drawing.Color.Red;
+            cn.Close();
+            return;
+        }
+        //2.check existing bid
         string qery = "SELECT COUNT(*) FROM BID_DETAILS WHERE TR_ID='" + trId + "' AND V_ID='" + vId + "'";
         SqlCommand cCmd = new SqlCommand(qery, cn);
         int count = (int)cCmd.ExecuteScalar();

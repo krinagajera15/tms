@@ -13,15 +13,15 @@
                 <asp:TextBox ID="ddlvid" runat="server" CssClass="form-control"></asp:TextBox>
                         <div class="mb-3">
                         <label for="ddltrid">Truck ID</label>
-                        <asp:DropDownList ID="ddltrid1" CssClass="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="TR_ID" DataValueField="TR_ID"></asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT [TR_ID] FROM [TR_REQUEST]"></asp:SqlDataSource>
+                        <asp:DropDownList ID="ddltrid1" CssClass="form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="TR_ID" DataValueField="TR_ID" AutoPostBack="true"></asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT  [TR_ID] FROM [TR_REQUEST]"></asp:SqlDataSource>
                     </div>
                     </div>
                     <div class="mb-3">
                        <label for="ddlnoftr">No of Trucks</label>
                 <asp:DropDownList ID="ddlnoftr" CssClass="form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NO_OF_TRUCK" DataValueField="NO_OF_TRUCK" >
                 </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT [TR_ID], [NO_OF_TRUCK] FROM [TR_REQUEST] WHERE ([TR_ID] = @TR_ID)">
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:con %>" SelectCommand="SELECT [NO_OF_TRUCK] FROM [TR_REQUEST] WHERE ([TR_ID] = @TR_ID)">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="ddltrid1" Name="TR_ID" PropertyName="SelectedValue" Type="Int32" />
                             </SelectParameters>

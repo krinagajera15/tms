@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net;
+using System.Net.Mail;
 
 public partial class Vendor_showbidditeil : System.Web.UI.Page
 {
@@ -51,6 +53,41 @@ public partial class Vendor_showbidditeil : System.Web.UI.Page
         }
     }
 
+    private void SendStatusEmail(string toEmail, string status, string bidId)
+    {
+        string subject = "Bid Status Update";
+        string body = "";
+
+        if (status == "Approved")
+        {
+            body = $"Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:green;'>Approved ✅</b>.<br/><br/>Regards,<br/>Transport Management System";
+        }
+        else if (status == "Rejected")
+        {
+            body = $"Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:red;'>Rejected ❌</b>.<br/><br/>Regards,<br/>Transport Management System";
+        }
+
+        try
+        {
+            MailMessage msg = new MailMessage();
+            msg.From = new MailAddress("yourgmail@gmail.com", "TMS Notification"); // ✅ your sender mail
+            msg.To.Add(toEmail);
+            msg.Subject = subject;
+            msg.Body = body;
+            msg.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.EnableSsl = true;
+            smtp.Credentials = new NetworkCredential("yourgmail@gmail.com", "YOUR_APP_PASSWORD"); // ✅ use app password
+            smtp.Send(msg);
+        }
+        catch (Exception ex)
+        {
+            // Handle error if needed
+        }
+    }
+
+
     protected void gvVendorBids_RowDataBound(object sender, GridViewRowEventArgs e)
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
@@ -78,13 +115,5 @@ public partial class Vendor_showbidditeil : System.Web.UI.Page
         }
     }
 
-    //protected void btnAddVehicle_Click(object sender, GridViewCommandEventArgs e)
-    //{
-
-    //    if (e.CommandName == "AddVehicle")
-    //    {
-    //        int trId = Convert.ToInt32(e.CommandArgument);
-    //        Response.Redirect("~/Vendor/Default.aspx?TR_ID=" + trId);
-    //    }
-    //}
+    
 }
