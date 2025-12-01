@@ -1,5 +1,4 @@
 # 🚚 Freight Bidding TMS (Transportation Management System)
-              System)
 
 To Design and implement a transportation bidding platform where logistics companies can post route-based delivery jobs and vendors can submit bids. the system will 
 select the optimal bid based on cost, route efficiency, and efficiency, and vehicle 
