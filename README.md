@@ -60,10 +60,5 @@ System selects best bid based on:
 
 ---
 
-## 🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first.
-
----
-
 ## ⭐ Support
 If you like this project, please ⭐ the repository to support us!
