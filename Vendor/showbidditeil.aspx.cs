@@ -60,11 +60,11 @@ public partial class Vendor_showbidditeil : System.Web.UI.Page
 
         if (status == "Approved")
         {
-            body = $"Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:green;'>Approved ✅</b>.<br/><br/>Regards,<br/>Transport Management System";
+            body = "Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:green;'>Approved ✅</b>.<br/><br/>Regards,<br/>Transport Management System";
         }
         else if (status == "Rejected")
         {
-            body = $"Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:red;'>Rejected ❌</b>.<br/><br/>Regards,<br/>Transport Management System";
+            body = "Dear Vendor,<br/><br/>Your bid (ID: <b>{bidId}</b>) has been <b style='color:red;'>Rejected ❌</b>.<br/><br/>Regards,<br/>Transport Management System";
         }
 
         try
